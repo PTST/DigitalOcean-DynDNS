@@ -10,7 +10,7 @@ jobs:
     steps:
       -
         name: Release Version
-        run: echo "ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}"
+        run: echo "ptst/digitalocean-dyndns:${{ github.event.release.tag_name }}"
       -
         name: Checkout
         uses: actions/checkout@v2
@@ -37,7 +37,7 @@ jobs:
           push: true
           tags: |
             ptst/digitalocean-dyndns:latest
-            ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}
+            ptst/digitalocean-dyndns:${{ github.event.release.tag_name }}
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v2
