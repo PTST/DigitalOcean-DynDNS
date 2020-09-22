@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Release Version
+        run: echo "ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}"
+      -
         name: Checkout
         uses: actions/checkout@v2
       -
