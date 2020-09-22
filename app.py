@@ -70,7 +70,7 @@ while True:
             CURRENT_IP = external_ip
             LAST_UPDATED = datetime.utcnow()
         
-        elif ((datetime.utcnow()-LAST_UPDATED).total_seconds() / 60 )>= 10:
+        elif ((datetime.utcnow()-LAST_UPDATED).total_seconds() / 60 )>= 60:
             client.update_ip(external_ip)
             CURRENT_IP = external_ip
             LAST_UPDATED = datetime.utcnow()
