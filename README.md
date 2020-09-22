@@ -1,6 +1,5 @@
 # DigitalOcean-DynDNS
 ## Description
-
 Will update a specified DNS entry to point to the host's external IP via the DigitalOcean API.
 
 ### docker
