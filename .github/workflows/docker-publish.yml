@@ -1,8 +1,8 @@
 name: ci
 
 on:
-  push:
-    branches: master
+  release:
+    types: [published]
 
 jobs:
   main:
@@ -32,7 +32,14 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
-          tags: ptst/digitalocean-dyndns:latest
+          tags: ptst/digitalocean-dyndns:latest,ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}
+      -
+        name: Update repo description
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_REPOSITORY: ptst/digitalocean-dyndns
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
