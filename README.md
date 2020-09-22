@@ -1,7 +1,7 @@
 # DigitalOcean-DynDNS
-## Usage
+## Description
 
-Here are some example snippets to help you get started creating a container.
+Will update a specified DNS entry to point to the host's external IP via the DigitalOcean API.
 
 ### docker
 
