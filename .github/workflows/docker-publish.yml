@@ -32,7 +32,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
-          tags: user/app:latest
+          tags: ptst/digitalocean-dyndns:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
