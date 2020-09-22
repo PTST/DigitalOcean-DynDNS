@@ -1,5 +1,4 @@
 # DigitalOcean-DynDNS
-![ci](https://github.com/PTST/DigitalOcean-DynDNS/workflows/ci/badge.svg?branch=master)
 ## Usage
 
 Here are some example snippets to help you get started creating a container.
