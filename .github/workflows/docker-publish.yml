@@ -32,7 +32,9 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
-          tags: ptst/digitalocean-dyndns:latest,ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}
+          tags: |
+            ptst/digitalocean-dyndns:latest
+            ptst/digitalocean-dyndns:${{ env.RELEASE_VERSION }}
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v2
